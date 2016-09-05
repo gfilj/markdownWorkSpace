@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>learn</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: 微软雅黑, Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h2>定时器写法</h2>
+<ul>
+<li>1.start 先执行一次任务，然后定时任务</li>
+<li>2.定时任务继承自timerTask，实现方法即可</li>
+</ul>
+<h2>log4j查找错误</h2>
+<p>再打印错误日志的地方把必要的日志进行传入</p>
+<h2>信号量使用</h2>
+<ul>
+<li>只限于linux平台
+*只限于USR2信号量</li>
+<li>使用kill -s SIGUSR2 pid</li>
+</ul>
+<blockquote>
+<ul>
+<li>
+public static class ShutdownSignal implements SignalHandler {<br />
+@Override  
+
+<ul>
+<li>
+public void handle(Signal sign) {  
+
+<ul>
+<li>SERVER_LOOP = false;  
+</li>
+<li>LOG.info(&quot;server recv signal : &quot; + sign.getName());  
+</li>
+</ul>
+</li>
+<li>}   
+</li>
+</ul>
+</li>
+<li>}  
+</li>
+<li>Signal sign = new Signal(&quot;USR2&quot;);  
+</li>
+<li>Signal.handle(sign, new ShutdownSignal()); </li>
+</ul>
+</blockquote>
+<h2>线程池的停止</h2>
+<ul>
+<li>
+if(executorService != null) {  
+
+<ul>
+<li>executorService.shutdown();  
+</li>
+<li>
+try {  
+
+<ul>
+<li>executorService.awaitTermination(10, TimeUnit.SECONDS);  
+</li>
+</ul>
+</li>
+<li>
+} catch (InterruptedException e) {   
+
+<ul>
+<li>LOG.error(&quot;wait executor service exception : &quot; + e.toString());  
+</li>
+</ul>
+</li>
+<li>}  
+</li>
+</ul>
+</li>
+<li>}<br />
+awaitTermination 等待线程池中的线程执行完毕，如果在指定时间内没有执行完毕，那么返回false
+否则返回ture</li>
+</ul>
+<p>shutdown 启动一次顺序关闭，执行以前提交的任务，但不接受新任务。如果已经关闭，则调用没有其他作用。		</p>
+<h2>线程join的方法</h2>
+<p>join() 方法主要是让调用该方法的thread完成run方法里面的东西后， 在执行join()方法后面的代码</p>
+<h2>文件的创建</h2>
+<ol>
+<li>先判断目录文件是否存在，如果不存在创建目录文件</li>
+<li>创建所需要的文件</li>
+<li>针对这个结构可以创建一个稳定的目录标量，创建什么文件直接传入即可</li>
+</ol>
+<h2>redis删除的应用</h2>
+<ol>
+<li>获取redis成功删除后的用量，假如不为0的话，那么说明删除成功，如果删除成功的话可以结合下一步的操作</li>
+<li>如果不为0为1或者2的话，那么是不是要考虑一下这种情况呢，如果这种情况发生那么可是和平台丢量有大大的关系了</li>
+</ol>
+<h2>assert java关键字</h2>
+<p>主要在开发和测试时开启<br />
+1. assert exp1 此时的exp1为一个boolean类型的表达式
+2. assert exp1 : exp2 此时的exp1同上，而exp2可以为基本类型或一个Object
+<strong>point：</strong>在测试方法中assert报错后，其后的代码不执行</p>
+<h2>遍历map</h2>
+<ol>
+<li>keySet</li>
+<li>values</li>
+<li>entrySet  </li>
+</ol>
+<p>针对取出的值可采用for循环进行便利  </p>
+<ul>
+<li>obj：Collection</li>
+<li>iterator</li>
+</ul>
+<h2>修改map中的对象</h2>
+<p>在map中object的值修改之后，在map中存放的值已经改变，其实可以这么理解，map只是容器，存放对象的地址，我们把对改掉后，从map中查出来的值也就改变了</p>
+<h2>排序</h2>
+<h2>system.exit</h2>
+<p>Zero =&gt; Everything Okay</p>
+<p>Positive =&gt; Something I expected could potentially go wrong went wrong (bad command-line, can't find file, could not connect to server)</p>
+<p>Negative =&gt; Something I didn't expect at all went wrong (system error - unanticipated exception - externally forced termination e.g. kill -9)</p>
+<h2>死循环</h2>
+<p>for(;;){
+}</p>
+<h2>文件当中classpath的声明</h2>
+<h2><a href="http://www.iteye.com/topic/1002652">CountDownLatch</a></h2>
+<p>一个同步辅助类，在完成一组正在其他线程中执行的操作之前，它允许一个或多个线程一直等待。
+主要方法
+ public CountDownLatch(int count);
+ public void countDown();
+ public void await() throws InterruptedException</p>
+<p>构造方法参数指定了计数的次数
+countDown方法，当前线程调用此方法，则计数减一
+awaint方法，调用此方法会一直阻塞当前线程，直到计时器的值为0</p>
+<h2><T> T[] toArray(T[] a);</h2>
+<p>返回包含此 collection 中所有元素的数组；返回数组的运行时类型与指定数组的运行时类型相同。</p>
+<h2>分词系统</h2>
+<p><a href="http://doc.gotomao.com/apidoc!ikanalyzer.html">api地址</a></p>
+<h2>Thread.getStackTrace</h2>
+<p>返回一个表示该线程堆栈转储的堆栈跟踪元素数组。如果该线程尚未启动或已经终止，则该方法将返回一个零长度数组。如果返回的数组不是零长度的，则其第一个元素代表堆栈顶，它是该序列中最新的方法调用。最后一个元素代表堆栈底，是该序列中最旧的方法调用。</p>
+<h2>Thread.getStat</h2>
+<p>thread.getState().name().equals(&quot;WAITING&quot;)</p>
+<h2>获取栈顶元素</h2>
+<p>stackTrace[stackTrace.length-1]</p>
+<h2>StackTraceElement.getLineNumber</h2>
+<p>返回源行的行号，该行包含由该堆栈该跟踪元素所表示的执行点。<br />
+通常，该方法派生自相关 class 文件的 LineNumberTable 属性（根据 The Java Virtual Machine Specification 中的第 4.7.8 小节）。</p>
+<h2>Collections.synchronizedList</h2>
+<ol>
+<li>Collections.synchronizedSet
+返回指定 collection 支持的同步（线程安全的）collection。为了保证按顺序访问，必须通过返回的 collection 完成 所有对底层实现 collection 的访问。</li>
+<li>在返回的 collection 上进行迭代时，用户必须手工在返回的 collection 上进行同步：</li>
+<li>
+think：
+<ol>
+<li>为什么不是同一个锁就不是线程安全的</li>
+</ol>
+<blockquote>
+<ol>
+<li>一个等待的对象锁，一个等待的链表锁，要说不安全那就是这样的情况了，一个进程等待进入对象锁之后又创建了好几个线程进行并发修改对象中的列表，那么即便你加了对象锁，列表也是无论如何不安全的，</li>
+<li>两个等待的根本不是同一个锁</li>
+</ol>
+</blockquote>
+</li>
+<li>通过对<a href="http://my.oschina.net/infiniteSpace/blog/305425">源码的分析</a>得知Collections.synchronizedList针对传入的list中的基本操作进行了synchronized控制，加锁的对象是list本身，
+这样针对list基本的写法就不需要加synchronized特殊关键字了</li>
+<li>在基本操作中，针对list.iterator()或者list.iterator(int index)方法没有提供加锁控制的方式，所有在遍历的时候针对列表加锁控制</li>
+<li>如果封装一个原子性操作，需要对list本身进行加锁</li>
+</ol>
+<pre><code>public boolean putIfAbsent(E x) {  
+	synchronized (list) {  
+	    boolean absent = !list.contains(x);  
+	    if (absent)  
+	        list.add(x);  
+	    return absent;  
+	}  
+}   
+</code></pre>
+<h2><a href="http://m.blog.csdn.net/article/details?id=1748731">java泛型</a></h2>
+<ol>
+<li>灵活性：不用考虑对象的具体类型，就可以对对象进行一定的操作，对任何对象进行相同的操作</li>
+<li>局限性：由于没有考虑对象的具体类型，因此在一般情况下不能使用对象自带的接口函数</li>
+<li>最佳用途：实现容器类（该容器可以存储对象，也可以取出对象，而不用考虑对象的具体类型）</li>
+<li>
+实现原理：
+<ol>
+<li>泛型是在编译器而不是虚拟机中实现的，</li>
+</ol>
+<blockquote>
+<p>编译器一定要把范型类修改为普通类，才能够在虚拟机中执行。在java中，这种技术称之为“擦除”，也就是用Object类型替换范型 <strong>原生类</strong></p>
+</blockquote>
+</li>
+<li>
+范型类可以继承自某一个父类，或者实现某个接口，或者同时继承父类并且实现接口，这样的话，就可以对类型调用父类或接口中定义的方法了
+<blockquote>
+<p>public class Pair<T extends Comparable> <br />
+{ <br />
+public boolean setSecond(T newValue) { <br />
+boolean flag = false;<br />
+If(newValue.compareTo(first)&gt;0) {<br />
+     second = newValue;<br />
+     flag = true;<br />
+}<br />
+return flag;<br />
+} <br />
+private T first; <br />
+private T second; <br />
+}  
+</p>
+</blockquote>
+</li>
+<li>为了简化范型的设计，无论是继承类还是实现接口，一律使用extends关键字。</li>
+<li>若同时添加多个约束，各个约束之间用“&amp;”分隔</li>
+<li>
+定义一个函数，该函数接受一个范型类作为参数
+<blockquote>
+<ol>
+<li>对于这种形参，实参的类型必须和他完全一致，即也应该是一个元素为Number的list才可以，其他的实参一律不行</li>
+<li>Integer确实是Number的子类，但是，ArrayList<Integer>并不是ArrayList<Number>的子类，二者之间没有任何的继承关系</li>
+<li>在函数内部，我们把Float类型的元素插入到链表中。因为链表是Number类型，这条语句没问题。但是，如果实参是一个Integer类型的链表，他能存储Float类型的数据吗？？显然不能，这样就会造成运行时错误。于是，编译器干脆就不允许进行这样的传递。</li>
+</ol>
+</blockquote>
+</li>
+<li>定义一个范型方法要比Wildcard稍微灵活一些，可以往链表中添加T类型的对象，而Wildcard中是不允许往链表中添加任何类型的对象的。</li>
+<li>
+Wildcard支持另外一个关键字super，而范型方法不支持super关键字。换句话说，如果你要实现这样的功能：“<strong>传入的参数应该是指定类的父类</strong>”，范型方法就无能为力了，只能依靠Wildcard来实现
+<ol>
+<li>泛型函数，帮助函数</li>
+</ol>
+<pre><code>//把取出的元素再插入到链表中
+//帮助函数  
+public static <T>void helperTest5(ArrayList<T> l, int index) {  
+    T temp = l.get(index);  
+    l.add(temp);  
+}
+//主功能函数
+public static void test5(ArrayList<? super Integer> l) {  
+    Integer n = new Integer(45);  
+    l.add(n);    
+    helperTest5(l, 0);   //通过帮助类，将指定的元素取出后再插回去。  
+}</code></pre>
+</li>
+</ol>
+<h2>分布式锁实现方案</h2>
+<h2>Java中的ReentrantLock和synchronized两种锁定机制的对比</h2>
+<h2>正则解析json</h2>
+<pre><code>public static void main(String[] args) throws Exception {
+    String str = "{\"username\":\"zs\",\"password\":\"123123\",\"phone\":\"13612345678\"}";
+    Matcher m =Pattern.compile("\"(.*?)\":\"(.*?)\"").matcher(str);
+    while(m.find()){
+        System.out.println(m.group(1)+"="+m.group(2));
+    }
+}</pre><p></code></p>
+<h2>Volatile</h2>
+<p><a href="http://www.ibm.com/developerworks/cn/java/j-jtp06197.html">Java 理论与实践: 正确使用 Volatile 变量</a>  </p>
+<h4>心得：</h4>
+<ol>
+<li>Volatile变量只能提供可见性，可见性是相对于读操作，线程能自动发现volatile变量的最新值</li>
+<li>Volatile变量的当前值和修改后的值之间没有任何约束，也就是我们不需要关心当前值，直接在其上面修改即可</li>
+<li>volatile变量可以用于简易型和伸缩性的优化</li>
+<li>
+正确使用Volatile的条件
+<ol>
+<li>
+对变量的写操作不依赖于当前值
+<ol>
+<li>为什么这么说呢？</li>
+<li>因为如果依赖于当前值那么，就需要先读取当期的值，再修改和设置会内存，这样操作就不是原子性的了</li>
+<li>Volatile保证那部分操作是原子性的?</li>
+<li>那么需要了解一下<a href="http://www.infoq.com/cn/articles/ftf-java-volatile">volatile的实现原理</a></li>
+<li>
+在volatile变量在执行时转变为汇编代码时实在前面增加了lock前缀
+<ul>
+<li>将当前处理器缓存行的数据会写回到系统内存。</li>
+<li>这个写回内存的操作会引起在其他CPU里缓存了该内存地址的数据无效。</li>
+</ul>
+</li>
+<li>那么就明白了volatile具体操作的是那部分了，他只能保证当前数据能及时被其他线程看见，就是能保证修改数据后读操作的正确性，但是基于读操作出来的数据在修改的时候就会出现问题</li>
+<li>缓存一致性机制会阻止同时修改被两个以上处理器缓存的内存区域数据</li>
+</ol>
+</li>
+<li>该变量没有包含在具有其他变量的不变式中。</li>
+</ol>
+</li>
+<li>这就说明可以写入volatile变量的有效值独立于任何程序的状态</li>
+<li>volatile 的限制 —— 只有在状态真正独立于程序内其他内容时才能使用 volatile </li>
+<li>
+Volatile的正确使用
+<ol>
+<li>状态标志</li>
+<li>一次性安全发布（one-time safe publication）</li>
+<li>独立观察（independent observation）</li>
+<li>“volatile bean” 模式</li>
+<li>
+开销较低的读－写锁策略
+synchronized 确保增量操作是原子的，并使用 volatile 保证当前结果的可见性
+</li>
+<li>
+LinkedTransferQueue
+<ul>
+<li>在使用Volatile变量时，用一种追加字节的方式来优化队列出队和入队的性能</li>
+<li>为什么追加字节就能提高性能呢</li>
+<li>因为如果队列的头节点和尾节点都不足64字节的话，处理器会将它们都读到同一个高速缓存行中，在多处理器下每个处理器都会缓存同样的头尾节点，当一个处理器试图修改头接点时会将整个缓存行锁定，那么在缓存一致性机制的作用下，会导致其他处理器不能访问自己高速缓存中的尾节点，而队列的入队和出队操作是需要不停修改头接点和尾节点，所以在多处理器的情况下将会严重影响到队列的入队和出队效率。Doug lea使用追加到64字节的方式来填满高速缓冲区的缓存行，避免头接点和尾节点加载到同一个缓存行，使得头尾节点在修改时不会互相锁定</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2><a href="http://www.infoq.com/cn/articles/scalability-principles">可伸缩性原则</a></h2>
+<p>从最简单的水平来看，可伸缩性就是做更多的事情。更多的事情可以是响应更多的用户请求，执行更多的工作，或处理更多的数据。设计软件这件事本身是复杂的，而让软件做更多的工作也有其特有的问题。这篇文章针对构建可伸缩软件系统提出了一些原则和方针。</p>
+<h2>锁的两种特性</h2>
+<ol>
+<li>
+互斥性（mutual exclusion）
+<ul>
+<li>互斥即一次只允许一个线程持有某个特定的锁，因此可使用该特性实现对共享数据的协调访问协议，这样，一次就只有一个线程能够使用该共享数据。</li>
+</ul>
+</li>
+<li>
+可见性（visibility）
+<ul>
+<li>可见性要更加复杂一些，它必须确保释放锁之前对共享数据做出的更改对于随后获得该锁的另一个线程是可见的 —— 如果没有同步机制提供的这种可见性保证，线程看到的共享变量可能是修改前的值或不一致的值，这将引发许多严重问题</li>
+</ul>
+</li>
+</ol>
+<h2>Java 7中的TransferQueue</h2>
+<ol>
+<li><a href="http://ifeve.com/java-transfer-queue/">first</a></li>
+<li><a href="http://blog.csdn.net/yjian2008/article/details/16951811">second</a></li>
+</ol>
+<h2><a href="http://ifeve.com/easy-happens-before/">Java happens-before</a></h2>
+<ol>
+<li>
+happens-before规则不是描述实际操作的先后顺序，是用来描述可见性的一种规则
+<ul>
+<li>为什么是这个样子</li>
+<li>
+看官方说法的通俗解释：
+<ul>
+<li>
+如果线程1解锁了moniter a，接着线程2锁定了a，那么线程1解锁a之前的写操作对线程2均可见（线程1 和线程2 可以是同一个线程） 
+<ul>
+<li>针对这条规则引发了我无数的联想，哇塞，在程学中也会存在线程1解锁a之前的写操作对于线程2不可见的话，那是什么情况，线程不安全了吧，哇塞，那运用到生活中该如何</li>
+</ul>
+</li>
+<li>如果线程1写入了Volatile变量v（这里和后续的“变量”都指的是对象的字段、类字段和数组元素），接着线程2读取了v，那么，线程1写入v及之前的写操作都对线程2可见（线程1和线程2可以是同一个线程）</li>
+<li>线程t1写入的所有变量（所有action都与那个join有hb关系，当然也包括线程t1终止前的最后一个action了，最后一个action及之前的所有写入操作，所以是所有变量），在任意其它线程t2调用t1.join()成功返回后，都对t2可见。</li>
+<li>线程中上一个动作及之前的所有写操作在该线程执行下一个动作时对该线程可见（也就是说，同一个线程中前面的所有写操作对后面的操作可见）</li>
+<li>传递性</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+衍生出的其他happens-before原则：
+<ol>
+<li>如ReentrantLock的unlock与lock操作，又如AbstractQueuedSynchronizer的release与acquire，setState与getState等等。</li>
+</ol>
+</li>
+<li>
+看个CopyOnWriteArrayList的例子
+<ol>
+<li>这个例子中的可见性就是利用上述开销较低的读-写锁的策略进行的，不过在设置过程当中采用了一种新的手段保证线程安全性，那就是在通过加锁的过程当中采用set Volatile的方式通知其他线程重启读取共享的值，那么get方法就不需要同不了，提高了伸缩性</li>
+<li></li>
+</ol>
+</li>
+</ol>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
