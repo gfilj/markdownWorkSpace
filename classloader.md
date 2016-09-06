@@ -1,6 +1,18 @@
 ##classloader
+1. 什么是classloader
+	1. 编写完程序之后我们形成的是文件，如何将文件加载到内存中执行，这个时候就用到了classloader
+	2. classloader是一个负责加载classes的对象，classloader类是一个抽象类，通过给出的一个类的二进制名称，classloader尝试定位和产生可以定义一个class的数据，在这其中最典型的一种策略就是把二进制的名字转换为文件名然后从文件系统中找到该文件
 1. 线程安全
-2. loadclass的实现就是线程安全的
+	1. 为什么是线程安全的？
+	2. loadclass的实现就是线程安全的
+		1. 先判断是否被加载过
+		2. 从父类中加载
+		3. 从自身的classloader中加载
+
+3. loadClass（） 方法
+	1. synchronized (getClassLoadingLock(name))--》getClassLoadingLock(name)--》parallelLockMap
+		1. putIfAbsent好方法
+		2. 为类的加载操作返回一个锁对象。为了向后兼容，这个方法这样实现:如果当前的classloader对象注册了并行能力，方法返回一个与指定的名字className相关联的特定对象，否则，直接返回当前的ClassLoader对象。
 3. jvm的classLoader的加载机制
 4. 两个classloader是加载同一个class可能一样也可能不一样，有可能是同一个classloader加载的，也有可能不是同一个classloader加载的
 5. 关于classloader的加载问题，有一个最关键的地方就是有这样的需求，加载的时候需要家默认的加载顺序进行修改，首先加载子类的数据，只有在找不到的情况下，再去加载子类的东西，这和java默认的classloader加载正好是相反的，默认的classloader的加载顺序是从父类到子类的加载顺序过程，这个可以从源码看出，在源码上
