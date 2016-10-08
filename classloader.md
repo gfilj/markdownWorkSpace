@@ -8,7 +8,6 @@
 		1. 先判断是否被加载过
 		2. 从父类中加载
 		3. 从自身的classloader中加载
-
 3. loadClass（） 方法
 	1. synchronized (getClassLoadingLock(name))--》getClassLoadingLock(name)--》parallelLockMap
 		1. putIfAbsent好方法
@@ -24,4 +23,7 @@
 	3. 这样确实可以解决很多问题，但是新一轮的问题出现了，在加载共有类的时候classloader加载相同的东西还是会加载两遍，这是一个很浪费的行为，或者是没有必要的，从另一个角度来讲，这样的话我们无法通过静态的方法获取classloader对象（原有父类的getParent方法被声明为final模式，这样的模式是无法进行重写，即便进行了重写，别其他父类的方法调用时，也会出现很多意想不到的问题）
 	4. 那么如何进行解决呢，有两个需求，加载需要默认优先从子类加载，第二个需求就是从Thread.currentThread().getContextClassLoader().getParent()中获取到指定的共有的父classloader，那么现在的关键性问题来了，这两个需求是水火不相融的针对于同一classloader来说，
 	5. 那就用两个classloader进行处理，如下图所示
-	6. 
+
+
+
+###
